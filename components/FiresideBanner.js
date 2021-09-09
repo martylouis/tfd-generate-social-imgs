@@ -1,35 +1,23 @@
-import useGeneratePng from '../lib/useGeneragePng';
+import useGeneratePng from 'lib/useGeneragePng';
 import DownloadButton from './DownloadButton';
-import Spinner from './Spinner';
 
-/**
- *
- * 1. Rename component to FiresideBanner
- * 2. Setup form controls for:
- *  - Episode number
- *  - Podcast title
- *  - Options Podcast Title Size: Large (3.25rem), Extra Large (4rem)
- *
- */
-
-export default function SocialImage({
-  name,
-  width,
-  height,
-  podEpNum,
+export default function FiresideBanner({
+  podEp,
   podTitle,
   podTitleSize,
-  bgUrl,
-  pixelRatio = 1,
+  name = 'Fireside Banner',
+  width = '700',
+  height = '298',
+  pixelRatio = 2,
+  bgUrl = '/thefreelancedance_bg--1400x576.png',
 }) {
   const { generatePng, captureRef, loading } = useGeneratePng(
     width,
     height,
     name,
-    podEpNum,
+    podEp,
     pixelRatio
   );
-
   return (
     <div className="p-8">
       <div className="mb-4">
@@ -61,7 +49,7 @@ export default function SocialImage({
               className="mt-6 mb-1 text-2xl font-extrabold tracking-widest uppercase "
               style={{ textShadow: '0 8px 20px rgba(0,0,0,0.5)' }}
             >
-              Episode {podEpNum}
+              Episode {podEp}
             </p>
             <p
               className="font-bold font-sansCondensed"

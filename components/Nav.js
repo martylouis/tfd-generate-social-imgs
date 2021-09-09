@@ -1,6 +1,20 @@
+import {
+  CalendarIcon,
+  FolderIcon,
+  MicrophoneIcon,
+  UsersIcon,
+} from '@heroicons/react/outline';
 import { classnames } from 'tailwindcss-classnames';
 
-export default function Nav({ items, ...props }) {
+const navigation = [
+  { name: 'Fireside', href: '/', icon: MicrophoneIcon, current: true },
+  { name: 'Thumbnail', href: '#', icon: UsersIcon, current: false },
+  { name: 'Banner', href: '#', icon: UsersIcon, current: false },
+  { name: 'Square', href: '#', icon: FolderIcon, current: false },
+  { name: 'Story', href: '#', icon: CalendarIcon, current: false },
+];
+
+export default function Nav({ items = navigation, ...props }) {
   return (
     <nav {...props}>
       {items.map((item) => (

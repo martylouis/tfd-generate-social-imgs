@@ -1,7 +1,7 @@
 {
   "name": "tfd-generate-social-imgs",
   "description": "Generate social images for The Freelance Dance podcast",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "pages/index.js",
   "repository": {
     "type": "git",

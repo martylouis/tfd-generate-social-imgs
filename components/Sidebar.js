@@ -2,11 +2,15 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
 import Controls from './Controls';
-import Nav from './Nav';
 import SidebarFooter from './SidebarFooter';
 import SidebarHeader from './SidebarHeader';
 
-export default function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
+export default function Sidebar({
+  sidebarOpen,
+  setSidebarOpen,
+  navigation,
+  children,
+}) {
   return (
     <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -78,13 +82,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
           <div className="flex flex-col flex-1 min-h-0 bg-white border-r border-gray-200">
             <div className="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
               <SidebarHeader />
-              {/* <Nav
-                className="flex-1 px-2 mt-5 space-y-1 bg-white"
-                items={navigation}
-              /> */}
-              <div className="flex-1 px-4">
-                <Controls />
-              </div>
+              <div className="flex-1 px-4">{children}</div>
             </div>
             <SidebarFooter />
           </div>
