@@ -64,7 +64,7 @@ export default function Sidebar({
                 <SidebarHeader />
                 {/* <Nav className="px-2 mt-5 space-y-1" items={navigation} /> */}
                 <div className="flex-1 px-3">
-                  <Controls />
+                  <div className="flex-1 px-4">{children}</div>
                 </div>
               </div>
               <SidebarFooter />
